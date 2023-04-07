@@ -5,7 +5,7 @@ import com.github.dockerjava.api.command.CreateContainerResponse;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController("api/v1/worker")
+@RestController
 public class DockerController {
 
     private final DockerClient dockerClient;
@@ -13,9 +13,9 @@ public class DockerController {
     public DockerController(DockerClient dockerClient){
         this.dockerClient = dockerClient;
     }
-    @PostMapping("/container")
+    @PostMapping("/container/create")
     public void createContainer(){
-        CreateContainerResponse containerResponse = dockerClient.createContainerCmd("image").withCmd("command").exec();
+        CreateContainerResponse containerResponse = dockerClient.createContainerCmd("olalekan3264/jamesimage").exec();
         dockerClient.startContainerCmd(containerResponse.getId()).exec();
     }
 

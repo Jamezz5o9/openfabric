@@ -12,3 +12,8 @@ spring:
     username: ${env.SPRING_DATASOURCE_USERNAME}
     password: ${env.SPRING_DATASOURCE_PASSWORD}
 
+my_email: ${env.EMAIL}
+my_password: ${env.PASSWORD}
+my_url: ${env.URL}
+my_username: ${env.USERNAME}
+
