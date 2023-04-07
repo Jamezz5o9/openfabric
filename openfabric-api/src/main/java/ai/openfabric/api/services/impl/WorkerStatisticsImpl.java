@@ -22,9 +22,9 @@ import java.util.Optional;
 @Service
 public class WorkerStatisticsImpl  implements WorkerStatisticsService {
 
-    private WorkerStatisticsRepository workerStatisticsRepository;
-    private WorkerRepository workerRepository;
-    private DockerClient dockerClient;
+    private final WorkerStatisticsRepository workerStatisticsRepository;
+    private final WorkerRepository workerRepository;
+    private final DockerClient dockerClient;
 
     @Autowired
     public WorkerStatisticsImpl(WorkerRepository workerRepository, WorkerStatisticsRepository workerStatisticsRepository,
